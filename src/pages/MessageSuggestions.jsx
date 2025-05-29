@@ -22,17 +22,29 @@ export default function MessageSuggestions() {
     setLoading(true);
     try {
       // Use full URL if your backend is on a different port/domain
+      // const res = await axios.post(
+      //   "/api/ai/message-suggestions",
+      //   { objective },
+      //   {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       // Uncomment if you use JWT auth:
+      //       // Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
+      //     }
+      //   }
+      // );
+
+
       const res = await axios.post(
-        "/api/ai/message-suggestions",
-        { objective },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            // Uncomment if you use JWT auth:
-            // Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
-          }
-        }
-      );
+  `${import.meta.env.VITE_API_BASE_URL}/ai/message-suggestions`,
+  { objective },
+  {
+    headers: {
+      "Content-Type": "application/json",
+    }
+  }
+);
+
       setSuggestions(res.data.suggestions || []);
     } catch (err) {
       setError(

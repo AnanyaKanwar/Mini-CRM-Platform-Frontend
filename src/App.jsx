@@ -9,25 +9,45 @@ import Orders from "./pages/Orders";
 import Campaigns from "./pages/Campaigns";
 import Logs from "./pages/Logs";
 import MessageSuggestions from "./pages/MessageSuggestions";
+import AnalyticsPage from "./pages/AnalyticsPage ";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Toaster position="top-right" />
-      <Navbar />
-      <div className=""> {/* Padding top for navbar height */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/campaigns" element={<Campaigns />} />
-          <Route path="/communication-logs" element={<Logs />} />
-          <Route path="/ai-suggestions" element={<MessageSuggestions />} />
+    // <BrowserRouter>
+    //   <Toaster position="top-right" />
+    //   <Navbar />
+    //   <div className=""> {/* Padding top for navbar height */}
+    //     <Routes>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/login" element={<Login />} />
+    //       <Route path="/customers" element={<Customers />} />
+    //       <Route path="/orders" element={<Orders />} />
+    //       <Route path="/campaigns" element={<Campaigns />} />
+    //       <Route path="/communication-logs" element={<Logs />} />
+    //       <Route path="/ai-suggestions" element={<MessageSuggestions />} />
+    //       <Route path="/analytics" element={<AnalyticsPage />} />
 
-        </Routes>
-      </div>
-    </BrowserRouter>
+
+    //     </Routes>
+    //   </div>
+    // </BrowserRouter>
+    <BrowserRouter>
+  <Toaster position="top-right" />
+  <Navbar />
+  <div className=""> {/* Padding top for navbar height */}
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/customers" element={<Customers />} />
+      <Route path="/orders" element={<Orders />} />
+      <Route path="/campaigns" element={<Campaigns />} />
+      <Route path="/communication-logs" element={<Logs />} />
+      <Route path="/ai-suggestions" element={<MessageSuggestions />} />
+      <Route path="/analytics" element={<AnalyticsPage />} />
+    </Routes>
+  </div>
+</BrowserRouter>
+
   );
 }
 
