@@ -13,6 +13,7 @@ import {
   PointElement,
 } from "chart.js";
 import { Bar, Line, Pie } from "react-chartjs-2";
+import { FiBarChart2, FiUsers } from "react-icons/fi";
 
 ChartJS.register(
   CategoryScale,
@@ -78,59 +79,118 @@ const AnalyticsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-4">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold text-indigo-700 mb-8">Analytics Dashboard</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Customer Engagement</h2>
-            <Bar
-              data={customerEngagementData}
-              options={{
-                responsive: true,
-                plugins: {
-                  legend: {
-                    position: "top",
+<div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 p-6 pt-24">
+  <div className="max-w-6xl mx-auto">
+    <div className="flex items-center gap-4 mb-8">
+      <FiUsers className="text-indigo-400" size={36} />
+      <h1 className="py-2 mt-1 text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-purple-300">
+        Analytics Dashboard
+      </h1>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Customer Engagement Card */}
+      <div className="rounded-xl shadow-lg p-6 border border-gray-800 bg-gradient-to-br from-gray-700 to-gray-600 text-gray-100">
+        <h2 className="text-xl font-semibold mb-4">Customer Engagement</h2>
+        <div className="max-w-full md:max-w-md h-64">
+          <Bar
+            data={customerEngagementData}
+            options={{
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: "top",
+                  labels: {
+                    color: "#f3f4f6", // Light gray for legend text (or use rgba(243, 244, 246, 1))
                   },
                 },
-              }}
-            />
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Order Trends</h2>
-            <Line
-              data={orderTrendsData}
-              options={{
-                responsive: true,
-                plugins: {
-                  legend: {
-                    position: "top",
+              },
+              scales: {
+                x: {
+                  ticks: {
+                    color: "#f3f4f6", // Light gray for x-axis labels
+                  },
+                  grid: {
+                    color: "rgba(243, 244, 246, 0.1)", // Faint grid lines
                   },
                 },
-              }}
-            />
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center md:col-span-2">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
-              Campaign Performance
-            </h2>
-            <div className="max-w-xs w-full h-64">
-              <Pie
-                data={campaignPerformanceData}
-                options={{
-                  responsive: true,
-                  plugins: {
-                    legend: {
-                      position: "top",
-                    },
+                y: {
+                  ticks: {
+                    color: "#f3f4f6", // Light gray for y-axis labels
                   },
-                }}
-              />
-            </div>
-          </div>
+                  grid: {
+                    color: "rgba(243, 244, 246, 0.1)", // Faint grid lines
+                  },
+                },
+              },
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Order Trends Card */}
+      <div className="rounded-xl shadow-lg p-6 border border-gray-800 bg-gradient-to-br from-gray-700 to-gray-600 text-gray-100">
+        <h2 className="text-xl font-semibold mb-4">Order Trends</h2>
+        <div className="max-w-full md:max-w-md h-64">
+          <Line
+            data={orderTrendsData}
+            options={{
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: "top",
+                  labels: {
+                    color: "#f3f4f6", // Light gray for legend text
+                  },
+                },
+              },
+              scales: {
+                x: {
+                  ticks: {
+                    color: "#f3f4f6", // Light gray for x-axis labels
+                  },
+                  grid: {
+                    color: "rgba(243, 244, 246, 0.1)", // Faint grid lines
+                  },
+                },
+                y: {
+                  ticks: {
+                    color: "#f3f4f6", // Light gray for y-axis labels
+                  },
+                  grid: {
+                    color: "rgba(243, 244, 246, 0.1)", // Faint grid lines
+                  },
+                },
+              },
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Campaign Performance Card */}
+      <div className="rounded-xl shadow-lg p-6 border border-gray-800 bg-gradient-to-br from-gray-700 to-gray-600 text-gray-100 flex flex-col items-center md:col-span-2">
+        <h2 className="text-xl font-semibold mb-4 text-center">Campaign Performance</h2>
+        <div className="max-w-xs w-full h-64">
+          <Pie
+            data={campaignPerformanceData}
+            options={{
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: "top",
+                  labels: {
+                    color: "#f3f4f6", // Light gray for legend text
+                  },
+                },
+              },
+            }}
+          />
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 
