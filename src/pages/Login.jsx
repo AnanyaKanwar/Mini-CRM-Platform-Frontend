@@ -266,7 +266,7 @@ export default function Login() {
 
   const handleGoogleLogin = () => {
     window.location.href =
-      "http://minicrmbackend.vercel.app/api/auth/google";
+      "https://minicrmbackend.vercel.app/api/auth/google";
   };
 
   return (
