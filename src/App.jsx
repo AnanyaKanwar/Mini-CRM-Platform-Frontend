@@ -56,7 +56,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
 import Navbar from "./components/Navbar";
-import FloatingBot from "./components/FloatingBot"; // <-- Add this import
+import FloatingBot from "./components/FloatingBot";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Customers from "./pages/Customers";
