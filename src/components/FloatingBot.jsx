@@ -1,41 +1,5 @@
-// import React, { useState } from "react";
-// import { FiZap } from "react-icons/fi";
-// import { useNavigate } from "react-router-dom";
 
-// const FloatingBot = () => {
-//   const [isHovered, setIsHovered] = useState(false);
-//   const navigate = useNavigate();
 
-//   const handleClick = () => {
-//     navigate("/ai-suggestions");
-//   };
-
-//   return (
-//     <div className="fixed bottom-6 right-6 z-40">
-//       <div
-//         className="relative"
-//         onMouseEnter={() => setIsHovered(true)}
-//         onMouseLeave={() => setIsHovered(false)}
-//       >
-//         <button
-//           onClick={handleClick}
-//           className="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-500/90 hover:bg-indigo-600 text-white shadow-lg hover:shadow-indigo-500/40 transition-all duration-200"
-//           title="Get AI Suggestions"
-//         >
-//           <FiZap size={20} />
-//         </button>
-//         {isHovered && (
-//           <div className="absolute bottom-16 right-0 bg-gray-800/90 backdrop-blur-sm border border-gray-700/60 rounded-xl shadow-lg px-4 py-3 w-48 text-gray-100 text-sm animate-fade-in-down">
-//             <p className="font-medium">AI Message Suggestions</p>
-//             <p className="mt-1">Click to get campaign message ideas!</p>
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FloatingBot;
 import React, { useState } from "react";
 import { FiZap } from "react-icons/fi";
 import MessageSuggestionsModal from "../pages/MessageSuggestions";
